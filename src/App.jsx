@@ -1,14 +1,31 @@
-import React from 'react'
-import Form from './component/Form'
-import Card from './component/Card'
+import React, { useState } from 'react'
+import CardPage from './page/CardPage'
+import FormPage from './page/FormPage'
+
+
+const data=[
+    {
+        title: "title1",
+        desc: "Lorem ipsum dolor sit amet consectetur"
+    },
+    {
+        title: "title2",
+        desc: "Lorem ipsum dolor sit amet consectetur"
+    }
+]
 
 const App = () => {
 
+  const [formData, setFormData]= useState(data)
+
+  const handleFormData =(data)=>{
+    setFormData(prevData=>[...prevData, data])
+  }
 
   return (
     <>
-      <Form/>
-      <Card/>
+      <FormPage handleFormData={handleFormData}/>
+      <CardPage data={formData}/>
     </>
   )
 }

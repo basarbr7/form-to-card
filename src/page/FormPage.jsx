@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 
-const Form = () => {
+const FormPage = ({ handleFormData }) => {
     const [title, setTitle]= useState('')
     const [desc, setDesc]= useState('')
 
     const handleSubmit= (e)=>{
         e.preventDefault();
+        if(title && desc){
+            handleFormData({title, desc})
+        }
     };
-
   return (
     <div className='flex flex-col max-w-sm mx-auto justify-center items-center mt-10'>
         <h2>Collect data from a Form</h2>
@@ -29,4 +31,4 @@ const Form = () => {
   )
 }
 
-export default Form
+export default FormPage
