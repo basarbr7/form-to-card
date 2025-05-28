@@ -8,6 +8,8 @@ const FormPage = ({ handleFormData }) => {
         e.preventDefault();
         if(title && desc){
             handleFormData({title, desc})
+            setTitle('')
+            setDesc('')
         }
     };
   return (
