@@ -14,7 +14,7 @@ const FormPage = ({ handleFormData }) => {
     };
   return (
     <div className='flex flex-col max-w-sm mx-auto justify-center items-center mt-10'>
-        <h2>Collect data from a Form</h2>
+        <h2 className='text-3xl mb-5 '>Collect data from a Form</h2>
         <div className='w-full p-5 bg-green-500 flex flex-col gap-5'>
             <form onSubmit={handleSubmit}>
                 <div className='flex flex-col gap-2'>
